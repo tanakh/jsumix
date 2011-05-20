@@ -108,15 +108,11 @@ function step() {
             throw "input";
         }
         regs[c] = input.charCodeAt(0) & 0xff;
-        //alert(regs[c] + ": " + input[0]);
         input = input.substr(1);
         break;
     case 12: // Load Program
-        if (regs[b] != 0) {
-            alert("long jump");
+        if (regs[b] != 0)
             mem[0] = mem[regs[b]].clone();
-            alert("long jumped");
-        }
         pc = regs[c];
         break;
 
